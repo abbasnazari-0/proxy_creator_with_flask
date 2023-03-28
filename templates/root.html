@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask Logo Example</title>
+	<style>
+		/* Center the logo vertically and horizontally */
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		/* Adjust the size of the logo */
+		img {
+			max-width: 300px;
+			max-height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="{{ url_for('static', filename='flask-logo.png') }}" alt="Flask Logo">
+	</div>
+</body>
+</html>
