@@ -12,4 +12,4 @@
 
 [Step 4] run flask server
 
-    nohup gunicorn -w 3 servermanager:app --bind 0.0.0.0:3000 &
+    nohup gunicorn -w 3 superproxy:app --bind 0.0.0.0:3000 &
