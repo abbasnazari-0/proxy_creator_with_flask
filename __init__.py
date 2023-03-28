@@ -2,17 +2,27 @@ from flask import Flask, render_template, request
 import subprocess
 import os
 app = Flask(__name__)
+
+
 # 14ba08eef1d6e9293390a1969023cd1e
 # generate random string for secret key
 def generate_secret_key():
-    import random
-    import string
-    return ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(32))
+    # Generate a 16-byte secret key
+    secret_key = os.urandom(16)
+
+    # Convert the secret key to hex format
+    secret_hex = secret_key.hex()
+    return secret_hex
 
 @app.route('/', methods=['GET', 'POST'])
 def rootPage():
     return render_template('root.html')
 
+
+@app.route('/re', methods=['GET', 'POST'])
+def re():
+     return (generate_secret_key())
+    
 @app.route('/create', methods=['GET', 'POST'])
 def create_user():
     # get arg from 
